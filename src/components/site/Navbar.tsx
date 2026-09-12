@@ -38,22 +38,22 @@ export function Navbar() {
         scrolled ? "border-b border-border/70 bg-surface-0/80 backdrop-blur-xl" : "bg-transparent",
       )}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
+      <nav className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:flex lg:justify-between">
         <a
           href="#home"
-          className="font-display text-sm font-semibold tracking-[0.28em] text-foreground"
+          className="min-w-0 truncate font-display text-sm font-semibold tracking-[0.2em] text-foreground"
         >
           ANUPAM <span className="text-gradient">GOPE</span>
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-0.5 lg:flex">
           {links.map((l) => (
             <li key={l.id}>
               <a
                 href={`#${l.id}`}
                 className={cn(
-                  "rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground",
-                  active === l.id && "bg-secondary/60 text-foreground",
+                  "border-b border-transparent px-2.5 py-2 text-xs text-muted-foreground transition-colors hover:text-foreground xl:px-3.5 xl:text-sm",
+                  active === l.id && "border-primary/60 text-foreground",
                 )}
               >
                 {l.label}
@@ -67,7 +67,7 @@ export function Navbar() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="rounded-lg border border-border p-2 text-foreground transition-colors hover:border-primary/50 md:hidden"
+          className="shrink-0 rounded-md border border-border p-2 text-foreground transition-colors hover:border-primary/50 lg:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -75,7 +75,7 @@ export function Navbar() {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-border/60 bg-surface-0/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 md:hidden",
+          "overflow-hidden border-t border-border/60 bg-surface-0/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 lg:hidden",
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
         )}
       >

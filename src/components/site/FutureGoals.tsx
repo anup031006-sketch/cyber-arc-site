@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { profile } from "@/data/portfolio";
 import { Reveal, Section } from "./Section";
 
-const steps = ["Learning", "Building", "Improving"];
+const steps = ["Learning", "Building", "Experimenting", "Growing"];
 
 export function FutureGoals() {
   return (

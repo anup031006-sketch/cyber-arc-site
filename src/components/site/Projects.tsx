@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import { Reveal, Section } from "./Section";
 
@@ -10,23 +10,38 @@ export function Projects() {
       title="Featured Projects"
       subtitle="Things I've built while learning and experimenting with technology."
     >
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-6 lg:grid-cols-2">
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 100}>
-            <article className="glass-card group flex h-full flex-col overflow-hidden hover:-translate-y-1">
-              <div className="relative h-44 overflow-hidden border-b border-border/60 bg-secondary/30 sm:h-52">
-                <div className="absolute inset-0 grid-bg opacity-70" aria-hidden />
-                <div
-                  className="glow-orb left-1/3 top-1/3 size-40 bg-primary/30 transition-opacity duration-500 group-hover:opacity-70"
-                  aria-hidden
-                />
-                <span className="absolute bottom-4 left-5 font-display text-xl text-foreground/70 sm:text-2xl">
-                  {p.title}
-                </span>
+            <article className="project-card group flex h-full flex-col overflow-hidden">
+              <div className={`project-preview project-preview-${p.visual}`} aria-hidden>
+                <div className="project-grid" />
+                {p.visual === "campus" ? (
+                  <>
+                    <div className="campus-chart campus-chart-a" />
+                    <div className="campus-chart campus-chart-b" />
+                    <div className="campus-chart campus-chart-c" />
+                    <div className="campus-panel">
+                      <span>Campus overview</span>
+                      <strong>DATA / 01</strong>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="quantum-ring quantum-ring-a" />
+                    <div className="quantum-ring quantum-ring-b" />
+                    <div className="quantum-core" />
+                    <span className="quantum-label">VIBE / SIGNAL</span>
+                  </>
+                )}
+                <span className="project-index">0{i + 1}</span>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-xl font-semibold">{p.title}</h3>
+              <div className="flex flex-1 flex-col p-5 sm:p-7">
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="font-display text-xl font-semibold sm:text-2xl">{p.title}</h3>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-primary/65">Live project</span>
+                </div>
                 <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {p.description}
                 </p>
@@ -35,39 +50,28 @@ export function Projects() {
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full border border-border bg-secondary/40 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-muted-foreground"
+                      className="border border-border bg-secondary/30 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-6 flex flex-wrap items-center gap-3">
+                <div className="mt-6 flex items-center gap-3 border-t border-border/60 pt-5">
                   {p.url ? (
                     <a
                       href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:shadow-[0_0_30px_-8px_var(--glow)]"
+                      className="hud-button hud-button-primary group/link px-4 py-2.5 text-xs"
                     >
                       View Project
-                      <ArrowUpRight className="size-4" />
+                      <ArrowUpRight className="size-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
                     </a>
                   ) : (
                     <span className="rounded-full border border-dashed border-border px-4 py-2 text-xs text-muted-foreground">
                       Link coming soon
                     </span>
-                  )}
-                  {p.github && (
-                    <a
-                      href={p.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full border border-border px-4 py-2 text-sm text-foreground transition-colors hover:border-primary/60"
-                    >
-                      <Github className="size-4" />
-                      GitHub
-                    </a>
                   )}
                 </div>
               </div>
