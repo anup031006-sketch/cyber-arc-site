@@ -20,6 +20,8 @@ export type Project = {
   title: string;
   description: string;
   tags: string[];
+  /** Controls the abstract preview artwork without changing the card component. */
+  visual: "campus" | "quantum";
   /** Live project URL. Leave empty ("") to hide the View Project button. */
   url: string;
   /** Optional GitHub repo URL. Leave empty ("") to hide the GitHub button. */
@@ -33,7 +35,8 @@ export const projects: Project[] = [
     description:
       "A web-based project focused on presenting and organizing campus-related information through a modern digital interface.",
     tags: ["Web", "AI-assisted Development"],
-    url: "",
+    visual: "campus",
+    url: "https://campus-data-6.preview.emergentagent.com/?utm_source=share",
     github: "",
   },
   {
@@ -41,7 +44,8 @@ export const projects: Project[] = [
     description:
       "An experimental web project exploring an interactive digital experience with a futuristic concept.",
     tags: ["Web", "Experimental"],
-    url: "",
+    visual: "quantum",
+    url: "https://quantum-vibe-check.preview.emergentagent.com/?utm_source=share",
     github: "",
   },
 ];
@@ -77,7 +81,7 @@ export const education = [
 ];
 
 export const socials = {
-  instagram: "https://instagram.com/natty.anup_03",
+  instagram: "https://www.instagram.com/natty.anup_03?stkn=dG43MHo1dG43MHo1dG43MHo1dG43MHo1",
   /** Add your links here to switch them from "Coming soon" to real links. */
   github: "",
   linkedin: "",
