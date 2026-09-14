@@ -51,6 +51,20 @@ export function Hero() {
     <section id="home" className="relative flex min-h-[min(900px,100svh)] items-center overflow-hidden border-b border-border/60">
       <div className="pointer-events-none absolute inset-0 grid-bg" aria-hidden />
       <div className="hero-scanline" aria-hidden />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+        <div
+          className="glow-orb bg-primary/25"
+          style={{ width: "34rem", height: "34rem", left: "-10%", top: "-15%", animationDuration: "22s", animationDelay: "-4s" }}
+        />
+        <div
+          className="glow-orb bg-primary/18"
+          style={{ width: "26rem", height: "26rem", right: "-8%", bottom: "-10%", animationDuration: "28s", animationDelay: "-12s" }}
+        />
+        <div
+          className="glow-orb bg-chart-2/15"
+          style={{ width: "18rem", height: "18rem", left: "45%", top: "55%", animationDuration: "20s", animationDelay: "-8s" }}
+        />
+      </div>
 
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-5 pb-24 pt-28 sm:px-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(330px,0.92fr)] lg:gap-8 lg:pt-24">
         <div className="relative min-w-0 border-l border-primary/25 pl-5 sm:pl-8">
