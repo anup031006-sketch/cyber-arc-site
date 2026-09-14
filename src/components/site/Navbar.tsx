@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Github, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { socials } from "@/data/portfolio";
 
 const links = [
   { id: "home", label: "Home" },
