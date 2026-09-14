@@ -47,6 +47,18 @@ export function Navbar() {
           ANUPAM <span className="text-gradient">GOPE</span>
         </a>
 
+        {socials.github && (
+          <a
+            href={socials.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="ml-1 hidden rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary/60 hover:text-primary sm:inline-flex"
+          >
+            <Github className="size-4" />
+          </a>
+        )}
+
         <ul className="hidden items-center gap-0.5 lg:flex">
           {links.map((l) => (
             <li key={l.id}>
