@@ -79,7 +79,7 @@ export function Hero() {
               <img
                 src={portraitAsset.url}
                 alt="Anupam Gope"
-                className="aspect-square h-[clamp(3.2rem,8vw,5.2rem)] rounded-full border-2 border-primary/40 object-cover shadow-[0_0_35px_-10px_var(--glow)]"
+                className="aspect-square h-[clamp(3.8rem,10vw,6.2rem)] rounded-full border-2 border-primary/40 object-cover shadow-[0_0_40px_-10px_var(--glow)]"
               />
             </div>
           </Reveal>
