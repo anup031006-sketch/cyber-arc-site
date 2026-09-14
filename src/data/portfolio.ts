@@ -83,7 +83,7 @@ export const education = [
 export const socials = {
   instagram: "https://www.instagram.com/natty.anup_03?stkn=dG43MHo1dG43MHo1dG43MHo1dG43MHo1",
   /** Add your links here to switch them from "Coming soon" to real links. */
-  github: "",
+  github: "https://github.com/anup031006-sketch",
   linkedin: "",
 };
 
