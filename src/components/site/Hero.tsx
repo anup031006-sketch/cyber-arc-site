@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowRight, Sparkles } from "lucide-react";
 import { profile } from "@/data/portfolio";
+import portraitAsset from "@/assets/anupam-portrait.jpg.asset.json";
 import { Reveal } from "./Section";
 
 function AiCore() {
@@ -69,11 +70,18 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-5 font-display text-[clamp(2.7rem,7vw,4.6rem)] font-bold leading-[0.98]">
-              ANUPAM
-              <br />
-              <span className="text-gradient">GOPE</span>
-            </h1>
+            <div className="mt-5 flex items-center gap-4 sm:gap-5">
+              <h1 className="font-display text-[clamp(2.7rem,7vw,4.6rem)] font-bold leading-[0.98]">
+                ANUPAM
+                <br />
+                <span className="text-gradient">GOPE</span>
+              </h1>
+              <img
+                src={portraitAsset.url}
+                alt="Anupam Gope"
+                className="aspect-square h-[clamp(3.2rem,8vw,5.2rem)] rounded-full border-2 border-primary/40 object-cover shadow-[0_0_35px_-10px_var(--glow)]"
+              />
+            </div>
           </Reveal>
 
           <Reveal delay={180}>
