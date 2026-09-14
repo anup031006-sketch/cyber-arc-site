@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowRight, Sparkles } from "lucide-react";
 import { profile } from "@/data/portfolio";
+import portraitAsset from "@/assets/anupam-portrait.jpg.asset.json";
 import { Reveal } from "./Section";
 
 function AiCore() {
