@@ -1,27 +1,32 @@
 import { useEffect, useState } from "react";
 import { Github, Menu, X } from "lucide-react";
+import { Link, useLocation } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 import { socials } from "@/data/portfolio";
 
 const links = [
-  { id: "home", label: "Home" },
-  { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
-  { id: "education", label: "Education" },
-  { id: "contact", label: "Contact" },
+  { id: "home", label: "Home", to: "/", hash: "home" },
+  { id: "about", label: "About", to: "/", hash: "about" },
+  { id: "projects", label: "Projects", to: "/", hash: "projects" },
+  { id: "skills", label: "Skills", to: "/", hash: "skills" },
+  { id: "education", label: "Education", to: "/", hash: "education" },
+  { id: "blog", label: "Blog", to: "/blog", hash: undefined },
+  { id: "resume", label: "Resume", to: "/resume", hash: undefined },
+  { id: "contact", label: "Contact", to: "/", hash: "contact" },
 ];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 12);
       let current = "home";
-      for (const l of links) {
+      if (location.pathname !== "/") return;
+      for (const l of links.filter((item) => item.hash)) {
         const el = document.getElementById(l.id);
         if (el && el.getBoundingClientRect().top <= 140) current = l.id;
       }
@@ -30,7 +35,9 @@ export function Navbar() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [location.pathname]);
+
+  const current = location.pathname === "/blog" ? "blog" : location.pathname === "/resume" ? "resume" : active;
 
   return (
     <header
@@ -40,12 +47,13 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 sm:px-8 lg:flex lg:justify-between">
-        <a
-          href="#home"
+        <Link
+          to="/"
+          hash="home"
           className="min-w-0 truncate font-display text-sm font-semibold tracking-[0.2em] text-foreground"
         >
           ANUPAM <span className="text-gradient">GOPE</span>
-        </a>
+        </Link>
 
         {socials.github && (
           <a
@@ -59,18 +67,19 @@ export function Navbar() {
           </a>
         )}
 
-        <ul className="hidden items-center gap-0.5 lg:flex">
+        <ul className="hidden items-center gap-0.5 xl:flex">
           {links.map((l) => (
             <li key={l.id}>
-              <a
-                href={`#${l.id}`}
+              <Link
+                to={l.to}
+                hash={l.hash}
                 className={cn(
                   "border-b border-transparent px-2.5 py-2 text-xs text-muted-foreground transition-colors hover:text-foreground xl:px-3.5 xl:text-sm",
-                  active === l.id && "border-primary/60 text-foreground",
+                  current === l.id && "border-primary/60 text-foreground",
                 )}
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -80,7 +89,7 @@ export function Navbar() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="shrink-0 rounded-md border border-border p-2 text-foreground transition-colors hover:border-primary/50 lg:hidden"
+          className="shrink-0 rounded-md border border-border p-2 text-foreground transition-colors hover:border-primary/50 xl:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
@@ -88,20 +97,21 @@ export function Navbar() {
 
       <div
         className={cn(
-          "overflow-hidden border-t border-border/60 bg-surface-0/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 lg:hidden",
+          "overflow-hidden border-t border-border/60 bg-surface-0/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 xl:hidden",
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
         )}
       >
         <ul className="flex flex-col px-5 py-2">
           {links.map((l) => (
             <li key={l.id}>
-              <a
-                href={`#${l.id}`}
+              <Link
+                to={l.to}
+                hash={l.hash}
                 onClick={() => setOpen(false)}
                 className="block border-b border-border/40 py-3.5 text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 {l.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

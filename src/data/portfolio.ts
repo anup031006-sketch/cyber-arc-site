@@ -22,6 +22,8 @@ export type Project = {
   tags: string[];
   /** Controls the abstract preview artwork without changing the card component. */
   visual: "campus" | "quantum";
+  /** CDN screenshot URL. Leave empty to use the honest abstract fallback. */
+  image?: string;
   /** Live project URL. Leave empty ("") to hide the View Project button. */
   url: string;
   /** Optional GitHub repo URL. Leave empty ("") to hide the GitHub button. */
@@ -88,12 +90,43 @@ export const socials = {
 };
 
 export const contact = {
-  /**
-   * Paste a form endpoint here to make the contact form send messages,
-   * e.g. Formspree: "https://formspree.io/f/xxxxxxx".
-   * While this is empty the form validates but tells visitors it isn't connected yet.
-   */
   formEndpoint: "",
-  /** Optional fallback email address shown as a mailto link. */
-  email: "",
+  email: "anup031006@gmail.com",
 };
+
+export type BlogPost = {
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readTime: string;
+  body: string[];
+};
+
+/** Add future writing here. Each object becomes a complete article on the Blog page. */
+export const blogPosts: BlogPost[] = [
+  {
+    title: "Starting My AI/ML Journey",
+    excerpt: "Why I chose to learn artificial intelligence and machine learning, and how I am building a strong foundation.",
+    category: "Learning Notes",
+    date: "September 2026",
+    readTime: "3 min read",
+    body: [
+      "I am at the beginning of my AI and machine learning journey at Sanskriti University. Right now, my focus is on understanding the fundamentals, improving my coding skills and learning how technology can solve useful problems.",
+      "I am taking a build-as-I-learn approach. Small projects help me turn ideas into working digital experiences, understand what I still need to learn and improve one step at a time.",
+      "I will use this blog to record useful lessons, project decisions and honest progress as my skills develop.",
+    ],
+  },
+  {
+    title: "What I Learned Building My First Web Projects",
+    excerpt: "Reflections from creating Campus Data and Quantum Vibe Check with AI-assisted development tools.",
+    category: "Project Journal",
+    date: "September 2026",
+    readTime: "4 min read",
+    body: [
+      "Campus Data and Quantum Vibe Check gave me practical experience turning a concept into an interface that people can open and explore.",
+      "These projects taught me that the details matter: clear structure, readable content, consistent spacing and a focused visual direction all shape how a project feels.",
+      "I am still learning the technical foundations behind the tools I use. My next goal is to keep improving my coding knowledge while building more complete and useful projects.",
+    ],
+  },
+];

@@ -51,22 +51,7 @@ export function Hero() {
     <section id="home" className="relative flex min-h-[min(900px,100svh)] items-center overflow-hidden border-b border-border/60">
       <div className="pointer-events-none absolute inset-0 grid-bg" aria-hidden />
       <div className="hero-scanline" aria-hidden />
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
-        <div
-          className="glow-orb bg-primary/25"
-          style={{ width: "34rem", height: "34rem", left: "-10%", top: "-15%", animationDuration: "22s", animationDelay: "-4s" }}
-        />
-        <div
-          className="glow-orb bg-primary/18"
-          style={{ width: "26rem", height: "26rem", right: "-8%", bottom: "-10%", animationDuration: "28s", animationDelay: "-12s" }}
-        />
-        <div
-          className="glow-orb bg-chart-2/15"
-          style={{ width: "18rem", height: "18rem", left: "45%", top: "55%", animationDuration: "20s", animationDelay: "-8s" }}
-        />
-      </div>
-
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-5 pb-24 pt-28 sm:px-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(330px,0.92fr)] lg:gap-8 lg:pt-24">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-24 pt-24 sm:px-8 lg:grid-cols-[minmax(0,1.12fr)_minmax(300px,0.78fr)] lg:gap-12 lg:pt-20">
         <div className="relative min-w-0 border-l border-primary/25 pl-5 sm:pl-8">
           <span className="absolute -left-px top-0 h-20 w-px bg-primary" aria-hidden />
           <Reveal>
@@ -84,7 +69,7 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="mt-5 flex items-center gap-4 sm:gap-5">
+            <div className="mt-5 flex items-center gap-3 sm:gap-4">
               <h1 className="font-display text-[clamp(2.7rem,7vw,4.6rem)] font-bold leading-[0.98]">
                 ANUPAM
                 <br />
@@ -93,7 +78,7 @@ export function Hero() {
               <img
                 src={portraitAsset.url}
                 alt="Anupam Gope"
-                className="aspect-square h-[clamp(3.8rem,10vw,6.2rem)] rounded-full border-2 border-primary/40 object-cover shadow-[0_0_40px_-10px_var(--glow)]"
+                className="aspect-square h-[clamp(3.1rem,7vw,4.5rem)] rounded-full border border-primary/40 object-cover shadow-[0_0_30px_-12px_var(--glow)]"
               />
             </div>
           </Reveal>
