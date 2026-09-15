@@ -1,8 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/portfolio";
+import quantumScreenshot from "@/assets/quantum-vibe-check.png.asset.json";
 import { Reveal, Section } from "./Section";
 
 export function Projects() {
+  const screenshots: Record<string, string | undefined> = {
+    "Quantum Vibe Check": quantumScreenshot.url,
+  };
+
   return (
     <Section
       id="projects"
@@ -12,12 +17,19 @@ export function Projects() {
     >
       <div className="grid gap-6 lg:grid-cols-2">
         {projects.map((p, i) => (
-          <Reveal key={p.title} delay={i * 100}>
+          <Reveal key={p.title} delay={i * 100} className="h-full">
             <article className="project-card group flex h-full flex-col overflow-hidden">
-              <div className={`project-preview project-preview-${p.visual}`} aria-hidden>
-                <div className="project-grid" />
-                {p.visual === "campus" ? (
+              <div className={`project-preview project-preview-${p.visual}`}>
+                {screenshots[p.title] ? (
+                  <img
+                    src={screenshots[p.title]}
+                    alt={`${p.title} website preview`}
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    loading="lazy"
+                  />
+                ) : p.visual === "campus" ? (
                   <>
+                    <div className="project-grid" aria-hidden />
                     <div className="campus-chart campus-chart-a" />
                     <div className="campus-chart campus-chart-b" />
                     <div className="campus-chart campus-chart-c" />
@@ -28,13 +40,14 @@ export function Projects() {
                   </>
                 ) : (
                   <>
+                    <div className="project-grid" aria-hidden />
                     <div className="quantum-ring quantum-ring-a" />
                     <div className="quantum-ring quantum-ring-b" />
                     <div className="quantum-core" />
                     <span className="quantum-label">VIBE / SIGNAL</span>
                   </>
                 )}
-                <span className="project-index">0{i + 1}</span>
+                <span className="project-index" aria-hidden>0{i + 1}</span>
               </div>
 
               <div className="flex flex-1 flex-col p-5 sm:p-7">
