@@ -42,6 +42,18 @@ export function Projects() {
                       <strong>DATA / 01</strong>
                     </div>
                   </>
+                ) : p.visual === "campusCore" ? (
+                  <>
+                    <div className="project-grid" aria-hidden />
+                    <div className="core-tile core-tile-a" />
+                    <div className="core-tile core-tile-b" />
+                    <div className="core-tile core-tile-c" />
+                    <div className="core-tile core-tile-d" />
+                    <div className="campus-panel">
+                      <span>Modules online</span>
+                      <strong>CAMPUS / CORE</strong>
+                    </div>
+                  </>
                 ) : (
                   <>
                     <div className="project-grid" aria-hidden />

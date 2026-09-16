@@ -21,7 +21,7 @@ export type Project = {
   description: string;
   tags: string[];
   /** Controls the abstract preview artwork without changing the card component. */
-  visual: "campus" | "quantum" | "travel" | "speak";
+  visual: "campus" | "quantum" | "travel" | "speak" | "campusCore";
   /** CDN screenshot URL. Leave empty to use the honest abstract fallback. */
   image?: string;
   /** Live project URL. Leave empty ("") to hide the View Project button. */
@@ -66,6 +66,15 @@ export const projects: Project[] = [
     tags: ["Web", "AI", "Communication"],
     visual: "speak",
     url: "https://translucent-speak-up-flow.base44.app",
+    github: "",
+  },
+  {
+    title: "Campus Smart Core",
+    description:
+      "A smart college-management platform that brings essential campus activities and student resources into one place — features for students, academics, campus information, communication and everyday college needs.",
+    tags: ["Web", "Campus", "Productivity"],
+    visual: "campusCore",
+    url: "https://campus-smart-core.base44.app",
     github: "",
   },
 ];
