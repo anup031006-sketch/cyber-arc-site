@@ -21,7 +21,7 @@ export type Project = {
   description: string;
   tags: string[];
   /** Controls the abstract preview artwork without changing the card component. */
-  visual: "campus" | "quantum" | "travel";
+  visual: "campus" | "quantum" | "travel" | "speak";
   /** CDN screenshot URL. Leave empty to use the honest abstract fallback. */
   image?: string;
   /** Live project URL. Leave empty ("") to hide the View Project button. */
@@ -57,6 +57,15 @@ export const projects: Project[] = [
     tags: ["Web", "Travel", "Indian Railways"],
     visual: "travel",
     url: "https://travel-with-anup--anup031006.replit.app",
+    github: "",
+  },
+  {
+    title: "Speak Like a Pro",
+    description:
+      "An AI-powered communication practice platform — interactive conversation practice, real-life scenarios, feedback, challenges and progress tracking to build speaking confidence.",
+    tags: ["Web", "AI", "Communication"],
+    visual: "speak",
+    url: "https://translucent-speak-up-flow.base44.app",
     github: "",
   },
 ];
