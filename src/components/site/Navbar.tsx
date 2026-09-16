@@ -72,7 +72,7 @@ export function Navbar() {
             <li key={l.id}>
               <Link
                 to={l.to}
-                hash={l.hash}
+                {...(l.hash ? { hash: l.hash } : {})}
                 className={cn(
                   "border-b border-transparent px-2.5 py-2 text-xs text-muted-foreground transition-colors hover:text-foreground xl:px-3.5 xl:text-sm",
                   current === l.id && "border-primary/60 text-foreground",
@@ -106,7 +106,7 @@ export function Navbar() {
             <li key={l.id}>
               <Link
                 to={l.to}
-                hash={l.hash}
+                {...(l.hash ? { hash: l.hash } : {})}
                 onClick={() => setOpen(false)}
                 className="block border-b border-border/40 py-3.5 text-sm text-muted-foreground transition-colors hover:text-primary"
               >
