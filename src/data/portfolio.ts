@@ -21,7 +21,7 @@ export type Project = {
   description: string;
   tags: string[];
   /** Controls the abstract preview artwork without changing the card component. */
-  visual: "campus" | "quantum" | "travel";
+  visual: "campus" | "quantum" | "travel" | "speak";
   /** CDN screenshot URL. Leave empty to use the honest abstract fallback. */
   image?: string;
   /** Live project URL. Leave empty ("") to hide the View Project button. */
