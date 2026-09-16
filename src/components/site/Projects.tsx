@@ -1,11 +1,13 @@
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import quantumScreenshot from "@/assets/quantum-vibe-check.png.asset.json";
+import travelScreenshot from "@/assets/travel-with-anup.jpg";
 import { Reveal, Section } from "./Section";
 
 export function Projects() {
   const screenshots: Record<string, string | undefined> = {
     "Quantum Vibe Check": quantumScreenshot.url,
+    "Travel with Anup": travelScreenshot,
   };
 
   return (
