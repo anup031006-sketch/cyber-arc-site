@@ -21,7 +21,7 @@ export type Project = {
   description: string;
   tags: string[];
   /** Controls the abstract preview artwork without changing the card component. */
-  visual: "campus" | "quantum";
+  visual: "campus" | "quantum" | "travel";
   /** CDN screenshot URL. Leave empty to use the honest abstract fallback. */
   image?: string;
   /** Live project URL. Leave empty ("") to hide the View Project button. */
@@ -48,6 +48,15 @@ export const projects: Project[] = [
     tags: ["Web", "Experimental"],
     visual: "quantum",
     url: "https://quantum-vibe-check.preview.emergentagent.com/?utm_source=share",
+    github: "",
+  },
+  {
+    title: "Travel with Anup",
+    description:
+      "A smart travel companion for Indian railway travelers — plan journeys, track trains, check PNR status and access travel services in one simple, modern interface.",
+    tags: ["Web", "Travel", "Indian Railways"],
+    visual: "travel",
+    url: "https://travel-with-anup--anup031006.replit.app",
     github: "",
   },
 ];
