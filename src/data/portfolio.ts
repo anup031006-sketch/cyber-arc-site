@@ -59,6 +59,15 @@ export const projects: Project[] = [
     url: "https://travel-with-anup--anup031006.replit.app",
     github: "",
   },
+  {
+    title: "Speak Like a Pro",
+    description:
+      "An AI-powered communication practice platform — interactive conversation practice, real-life scenarios, feedback, challenges and progress tracking to build speaking confidence.",
+    tags: ["Web", "AI", "Communication"],
+    visual: "speak",
+    url: "https://translucent-speak-up-flow.base44.app",
+    github: "",
+  },
 ];
 
 /** Skills I actually have right now. */
