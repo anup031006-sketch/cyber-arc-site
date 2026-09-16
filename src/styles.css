@@ -289,6 +289,12 @@
 .campus-chart-c { left: 43%; height: 66%; }
 .campus-panel { position: absolute; right: 8%; top: 28%; display: flex; flex-direction: column; gap: 0.55rem; border-left: 1px solid var(--primary); padding-left: 1rem; font-family: var(--font-mono); font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-foreground); }
 .campus-panel strong { font-size: 0.85rem; color: var(--foreground); }
+.core-tile { position: absolute; border: 1px solid color-mix(in oklab, var(--primary) 34%, transparent); background: color-mix(in oklab, var(--primary) 10%, transparent); transition: transform 500ms ease, background-color 500ms ease; }
+.project-card:hover .core-tile { transform: translateY(-5px); background: color-mix(in oklab, var(--primary) 20%, transparent); }
+.core-tile-a { left: 12%; top: 26%; width: 18%; height: 24%; }
+.core-tile-b { left: 12%; top: 56%; width: 18%; height: 20%; }
+.core-tile-c { left: 34%; top: 26%; width: 30%; height: 50%; }
+.core-tile-d { right: 12%; top: 26%; width: 13%; height: 50%; }
 .quantum-ring { position: absolute; left: 50%; top: 50%; border-radius: 9999px; border: 1px solid color-mix(in oklab, var(--primary) 44%, transparent); }
 .quantum-ring-a { width: 44%; aspect-ratio: 1; transform: translate(-50%, -50%) rotate(18deg); border-style: dashed; animation: quantum-spin 18s linear infinite; }
 .quantum-ring-b { width: 64%; aspect-ratio: 0.45; transform: translate(-50%, -50%) rotate(-22deg); animation: quantum-spin-wide 24s linear infinite reverse; }
